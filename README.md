@@ -1,24 +1,24 @@
-# README
+# Two
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Two is a nice simple app for pairing up pairs of programmers for pair-programming,
+like at pair-programming meetups, for instance.
 
-Things you may want to cover:
+## Contributing
 
-* Ruby version
+We love pull requests from everyone. If you'd like to contribute a feature or
+bugfix: Thanks! To make sure your fix/feature has a high chance of being included,
+please read the following guidelines:
 
-* System dependencies
+1. Fork the repo.
+2. Run the tests. We only take pull requests with passing tests, and it's great to
+know that you have a clean slate.
+3. Add a test for your change.
+4. Make the test pass.
+5. Push to your fork and submit a [pull request](https://github.com/devinrm/two/compare/).
+6. Make sure there are tests! We will not accept any contribution that is not tested (unless it's a design change).
+   It's a rare time when explicit tests aren't needed.
 
-* Configuration
+Thank you to all [the contributors](https://github.com/devinrm/two/graphs/contributors)!
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+The app is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
