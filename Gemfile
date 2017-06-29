@@ -19,6 +19,7 @@ gem "webpacker"
 
 group :development, :test do
   gem "capybara", "~> 2.14", ">= 2.14.4"
+  gem "rails-controller-testing", "~> 1.0", ">= 1.0.2"
   gem "rspec-rails", "~> 3.6"
   gem "selenium-webdriver", "~> 3.4", ">= 3.4.3"
 end
