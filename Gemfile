@@ -22,6 +22,7 @@ group :development, :test do
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.2"
   gem "rspec-rails", "~> 3.6"
   gem "selenium-webdriver", "~> 3.4", ">= 3.4.3"
+  gem "simplecov", require: false
 end
 
 group :development do

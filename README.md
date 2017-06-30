@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/devinrm/two/badges/gpa.svg)](https://codeclimate.com/github/devinrm/two)
+[![Issue Count](https://codeclimate.com/github/devinrm/two/badges/issue_count.svg)](https://codeclimate.com/github/devinrm/two)
+[![CircleCI](https://circleci.com/gh/devinrm/two/tree/master.svg?style=svg)](https://circleci.com/gh/devinrm/two/tree/master)
+
 # Two
 
 Two is a nice simple app for pairing up pairs of programmers for pair-programming,
