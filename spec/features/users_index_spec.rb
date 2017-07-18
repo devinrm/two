@@ -11,7 +11,7 @@ describe "Viewing the users index page" do
     user_three = User.create(name: "Pizza Doe",
                              developer_level: "Junior Developer")
 
-    visit users_url
+    visit users_path
 
     expect(page).to have_text("two")
     expect(page).to have_text(user_one.name)
