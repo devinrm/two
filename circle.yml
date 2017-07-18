@@ -11,7 +11,7 @@ deployment:
   staging:
     branch: master
     commands:
-      - git push git@heroku.com:two-app.git $CIRCLE_SHA1:master
+      - git push --force git@heroku.com:two-app.git $CIRCLE_SHA1:master
       - heroku run rails db:migrate --app two-app
 
 dependencies:
