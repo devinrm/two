@@ -1,14 +1,12 @@
-require "simplecov"
-SimpleCov.start "rails"
+require 'simplecov'
+SimpleCov.start 'rails'
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require "spec_helper"
-ENV["RAILS_ENV"] ||= "test"
-require File.expand_path("../../config/environment", __FILE__)
+require 'spec_helper'
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
-require "rspec/rails"
-require "capybara/rails"
-require "capybara/rspec"
+abort('The Rails environment is running in production mode!') if Rails.env.production?
+require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -31,7 +29,7 @@ require "capybara/rspec"
 ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.register_driver :chrome do |app|
-  preferences = { "profile.default_content_settings.popups" => 0 }
+  preferences = { 'profile.default_content_settings.popups' => 0 }
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
     chromeOptions: {
       args: %w[headless no-sandbox disable-gpu --window-size=1024,768],
@@ -43,7 +41,7 @@ Capybara.register_driver :chrome do |app|
                                       desired_capabilities: capabilities)
 end
 
-Selenium::WebDriver::Chrome.driver_path = Rails.root.join("chromedriver").to_s if File.exist?("chromedriver")
+Selenium::WebDriver::Chrome.driver_path = Rails.root.join('chromedriver').to_s if File.exist?("chromedriver")
 
 Capybara.javascript_driver = :chrome
 Capybara.default_max_wait_time = 8

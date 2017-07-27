@@ -1,1 +1,16 @@
-<%= render "create_user_form" %>
+<%= form_for @user  do |form| %>
+  <fieldset>
+    <legend>enter your details</legend>
+    <%= form.label :name, "Full Name" %>
+    <%= form.text_field(:name) %>
+
+    <%= form.radio_button(:level, "junior") %>
+    <%= form.label(:level_junior, "Junior Developer") %>
+    <%= form.radio_button(:level, "mid_level") %>
+    <%= form.label(:level_mid_level, "Mid-Level Developer") %>
+    <%= form.radio_button(:level, "senior") %>
+    <%= form.label(:level_senior, "Senior Developer") %>
+
+    <%= form.submit %>
+  </fieldset>
+<% end %>

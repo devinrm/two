@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_one :level
-
+  enum level: %i[junior mid_level senior]
   validates_presence_of :name
 end
