@@ -7,4 +7,19 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Promise from 'promise-polyfill'
+import 'babel-polyfill'
+import App from '../components/App'
+import UserRepository from '../repositories/userRepository'
+
+//To add to window
+if (!window.Promise) {
+  window.Promise = Promise
+}
+
+ReactDOM.render(
+  <App userRepository={new UserRepository('http://localhost:3000')}/>,
+  document.getElementById('root')
+)

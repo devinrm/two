@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#new', via: :get
+  root 'welcome#index'
 
   resources :users, only: [:index, :new, :create]
 end

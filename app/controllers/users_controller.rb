@@ -1,18 +1,14 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
-  end
-
-  def new
-    @user = User.new
+    render json: User.all
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to users_path, notice: "you're all set"
+      render json: @user
     else
-      render :new
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 

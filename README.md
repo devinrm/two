@@ -7,6 +7,16 @@
 Two is a nice simple app for pairing up pairs of programmers for pair-programming,
 like at pair-programming meetups, for instance.
 
+## Starting the server
+
+Run the Procfile with `foreman start`. This will start the webpack server on port 8080 and the rails server on port 3000
+
+## Running Tests
+
+  - To run backend tests: `rspec spec`
+  - To run frontend tests: `yarn test`
+  - To run frontend tests in watch mode: `yarn test-watch`
+
 ## Contributing
 
 We love pull requests from everyone. If you'd like to contribute a feature or
