@@ -9,7 +9,8 @@ like at pair-programming meetups, for instance.
 
 ## Starting the server
 
-Run the Procfile with `foreman start`. This will start the webpack server on port 8080 and the rails server on port 3000
+Start your rails server with `rails s`
+and start your webpack server with `yarn build`
 
 ## Running Tests
 
