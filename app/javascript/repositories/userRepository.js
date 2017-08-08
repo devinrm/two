@@ -1,9 +1,9 @@
 import 'whatwg-fetch'
 import {noop} from 'lodash'
 
-export default function userRepository(baseUrl) {
+export default function userRepository() {
   this.add = async (userData) => {
-    await fetch(`${baseUrl}/users`, {
+    await fetch('/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ export default function userRepository(baseUrl) {
   this.getAll = async () => {
     let usersJson = []
 
-    await fetch(`${baseUrl}/users`)
+    await fetch('/users')
       .then((data) => {
         return data.json()
       }).then((json) => {

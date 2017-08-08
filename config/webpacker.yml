@@ -25,14 +25,14 @@ development:
   <<: *default
 
   dev_server:
-    host: 0.0.0.0
+    host: localhost
     port: 8080
     https: false
 
 test:
   <<: *default
 
-  public_output_path: packs-test
+  public_output_path: packs
 
 production:
   <<: *default

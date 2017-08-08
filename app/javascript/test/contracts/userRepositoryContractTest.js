@@ -5,7 +5,7 @@ export default function UserRepositoryContractTest(UserRepositoryClass) {
 
   describe('User Repository', () => {
     beforeEach(async () => {
-      userRepository = new UserRepositoryClass('http://localhost:3333')
+      userRepository = new UserRepositoryClass()
     })
 
     describe('Adding Users', () => {

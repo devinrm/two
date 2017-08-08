@@ -1,7 +1,7 @@
 import UserRepositoryContractTest from '../contracts/userRepositoryContractTest'
 import { expect } from 'chai'
 
-export default function UserRepositoryFake(_baseUrl) {
+export default function UserRepositoryFake() {
   let users = []
   let id = 1
 

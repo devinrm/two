@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe 'Pairing Users', js: true do
+describe 'Pairing Users', js: true do
   it 'can pair created users' do
     visit root_path
 

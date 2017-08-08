@@ -20,6 +20,6 @@ if (!window.Promise) {
 }
 
 ReactDOM.render(
-  <App userRepository={new UserRepository('http://localhost:3000')}/>,
+  <App userRepository={new UserRepository()}/>,
   document.getElementById('root')
 )
