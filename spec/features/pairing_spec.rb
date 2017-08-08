@@ -4,7 +4,7 @@ describe 'Pairing Users', js: true do
   it 'can pair created users' do
     visit root_path
 
-    fill_in "Full Name", with: 'Hey Devin'
+    fill_in "Full Name", with: 'Hey Eliza'
     choose('Senior Developer')
     click_button 'Create User'
 
