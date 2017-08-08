@@ -14,7 +14,7 @@ import 'babel-polyfill'
 import App from '../components/App'
 import UserRepository from '../repositories/userRepository'
 
-//To add to window
+// To add to window
 if (!window.Promise) {
   window.Promise = Promise
 }

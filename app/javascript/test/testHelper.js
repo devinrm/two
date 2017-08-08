@@ -8,6 +8,7 @@ chai.use(chaiEnzyme())
 
 // http://airbnb.io/enzyme/docs/guides/jsdom.html
 const { JSDOM } = require('jsdom')
+
 const jsdom = new JSDOM('<!doctype html><html><body></body></html')
 const { window } = jsdom
 const copyProps = (src, target) => {
