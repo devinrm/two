@@ -43,7 +43,7 @@ export default class App extends React.Component {
   handleAddUser = async (event) => {
     event.preventDefault()
     let { fullName, skillLevel } = this.state
-    await this.props.userRepository.add({ fullName: fullName, skillLevel: skillLevel })
+    await this.props.userRepository.add({ fullName, skillLevel })
     this.getUsers()
   }
 

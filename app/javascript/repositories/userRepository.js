@@ -27,7 +27,7 @@ export default function userRepository(baseUrl) {
 
         console.log('request failed', error)
       })
-    
-    return {users: usersJson}  
+
+    return {users: usersJson}
   }
 }
