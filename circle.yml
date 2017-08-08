@@ -15,6 +15,9 @@ deployment:
       - heroku run rails db:migrate --app two-app
 
 dependencies:
+  override:
+    - yarn
+    - yarn build
   pre:
     - curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
     - sudo dpkg -i google-chrome.deb;
