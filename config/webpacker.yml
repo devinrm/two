@@ -19,6 +19,8 @@ default: &default
     - .gif
     - .jpeg
     - .jpg
+    - .svg
+    - .webp
 
 development:
   <<: *default

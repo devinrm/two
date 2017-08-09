@@ -1,3 +1,156 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$black: #000;
+$gallery-white: #eee;
+$hot-hot-pink: #ff50d6;
+$razzle-dazzle-rose: #d415a1;
+$robins-egg-blue: #00cccc;
+$robins-egg-blue-gradient: rgba(0, 166, 167, 0.95);
+$white: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  width: 30rem;
+  padding: 1.25rem;
+}
+
+html {
+  background: linear-gradient(
+    $robins-egg-blue-gradient,
+    $robins-egg-blue-gradient
+  ),
+  url("https://s3.amazonaws.com/two-app/dc_map.webp") no-repeat center center fixed;
+}
+
+.logo a {
+  color: $white;
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+
+sub {
+  font-size: 0.75rem;
+}
+
+form {
+  > div {
+    background: $white;
+    border-bottom: 1px solid $gallery-white;
+    position: relative;
+
+    > label {
+      color: $black;
+      font-weight: 900;
+      left: 1.25rem;
+      padding-left: 1.875rem;
+      opacity: 0.3;
+      position: absolute;
+      top: 1.25rem;
+    }
+
+    > input[type="radio"] {
+      background: $gallery-white;
+      border: 0;
+      height: 3.3rem;
+      margin-left: 1.25rem;
+      padding: 1.25rem 1.25rem 1.25rem 3.125rem;
+      width: 100%;
+    }
+
+    > input[type="text"] {
+      background: $gallery-white;
+      border: 0;
+      font-size: 1rem;
+      padding: 1.25rem 1.25rem 1.25rem 3.125rem;
+      width: 100%;
+
+      &:focus {
+        background: $white;
+
+        & + label {
+          opacity: 0;
+        }
+      }
+
+      &:valid {
+        background: url("https://s3.amazonaws.com/two-app/check.svg");
+        background-position: 1.25rem 1.25rem;
+        background-repeat: no-repeat;
+        background-size: 1.25rem;
+        & + label {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  button {
+    background: $razzle-dazzle-rose;
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2rem;
+    margin: 0 0 1.25rem;
+    padding: 1.25rem;
+    transition: 0.25s;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      border-color: adjust-hue($hot-hot-pink, 45deg);
+    }
+  }
+
+  .fill:hover,
+  .fill:focus {
+    box-shadow: inset 0 -3.25em 0 0 adjust-hue($hot-hot-pink, 45deg);
+  }
+}
+
+table {
+  border: 1px solid $gallery-white;
+  border-bottom: 2px solid $robins-egg-blue;
+  border-collapse: collapse;
+  box-shadow: 0rem 0rem 1.25rem rgba(0,0,0,0.10),
+  0rem 0.625rem 1.25rem rgba(0,0,0,0.05),
+  0rem 1.25rem 1.25rem rgba(0,0,0,0.05),
+  0rem 1.875rem 1.25rem rgba(0,0,0,0.05);
+  font-family: 'Raleway', sans-serif;
+  width: 27.5rem;
+
+  tr {
+    &:hover {
+      background: $gallery-white;
+
+      td {
+        color: $black;
+      }
+    }
+  }
+
+  th, td {
+    border: 1px solid $gallery-white;
+    border-collapse: collapse;
+    color: $white;
+    padding: 0.75rem 2.187rem;
+  }
+
+  th {
+    background: $robins-egg-blue;
+    color: $white;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    &.last {
+      border-right: none;
+    }
+  }
+}

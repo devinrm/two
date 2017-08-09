@@ -6,7 +6,7 @@ describe 'Pairing Users', js: true do
 
     fill_in "Full Name", with: 'Hey Eliza'
     choose('Senior Developer')
-    click_button 'Create User'
+    click_button 'Sign Up'
 
     within('table.users') do
       expect(page).to have_content('Hey Eliza')

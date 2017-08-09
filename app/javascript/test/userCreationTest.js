@@ -18,7 +18,7 @@ describe('creating users', () => {
   step('fill out new user form', async () => {
     fillIn('Full Name', { with: 'Test Name'} )
     clickRadioButtonByLabel('Senior Developer')
-    await clickButton('Create User')
+    await clickButton('Sign Up')
 
     expect(app.find('table.users')).to.exist
     expect(app.find('table.users')).to.contain.text('Test Name')
