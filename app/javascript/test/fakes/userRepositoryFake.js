@@ -1,8 +1,11 @@
 import UserRepositoryContractTest from '../contracts/userRepositoryContractTest'
 import { expect } from 'chai'
-
+import isEmpty from 'lodash/isEmpty'
+import chunk from 'lodash/chunk'
+ 
 export default function UserRepositoryFake() {
   let users = []
+  let pairs = []
   let id = 1
 
   this.add = async (userData) => {
@@ -10,8 +13,21 @@ export default function UserRepositoryFake() {
     id += 1
   }
 
-  this.getAll = async () => {
-    return ({ users: users })
+  this.getAll = async () => ({ users: users })
+
+  this.getPairs = async () => {
+    if(!isEmpty(users)) {
+      let pairChunks = chunk(users, 2)
+      pairChunks.forEach((users, i) => {
+        const pairOne = users[0].name
+        const pairTwo = (users[1] && users[1].name) || null
+        pairs.push({id: i+1, 
+                    pairOne: pairOne,
+                    pairTwo: pairTwo
+        })
+      })
+    }
+    return { pairs: pairs } 
   }
 }
 

@@ -30,4 +30,20 @@ export default function userRepository() {
 
     return {users: usersJson}
   }
+
+  this.getPairs = async () => {
+    let pairsJson = []
+
+    await fetch('/pairs')
+      .then((data) => {
+        return data.json()
+      }).then((json) => {
+        pairsJson = json
+      }).catch((error) => {
+
+        console.log('request failed', error)
+      })
+
+    return { pairs: pairsJson }
+  }
 }

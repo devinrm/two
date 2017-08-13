@@ -24,6 +24,19 @@ export default function UserRepositoryContractTest(UserRepositoryClass) {
         expect(returnedUsers).to.deep.eq( { users: [] })
       })
     })
+
+    describe('Getting Pairs', () => {
+      it('returns array of pairs', async () => {
+        await userRepository.add({ fullName: 'User One' })
+        await userRepository.add({ fullName: 'User Two' })
+        let returnedPairs = await userRepository.getPairs()
+        expect(returnedPairs).to.deep.eq({
+          pairs: [
+            { id: 1, pairOne: 'User One', pairTwo: 'User Two' }
+          ] 
+        })
+      })
+    })
   })
 }
 
