@@ -6,7 +6,7 @@ import PairsList from '../../components/PairsList'
 
 describe('Displaying Pairs', () => {
   let pairsList
-  let pairs = [{id: 1, pairOne: 'User One', pairTwo: 'User Two'}]
+  let pairs = [{pair_one: 'User One', pair_two: 'User Two'}]
 
   beforeEach(() => {
     pairsList = shallow(<PairsList pairs={pairs}/>)

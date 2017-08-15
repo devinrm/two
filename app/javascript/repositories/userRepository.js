@@ -1,7 +1,7 @@
 import 'whatwg-fetch'
 import {noop} from 'lodash'
 
-export default function userRepository() {
+export default function UserRepository() {
   this.add = async (userData) => {
     await fetch('/users', {
       method: 'POST',
@@ -25,7 +25,7 @@ export default function userRepository() {
         usersJson = json
       }).catch((error) => {
 
-        console.log('request failed', error)
+        console.log('get users request failed', error)
       })
 
     return {users: usersJson}
@@ -41,9 +41,9 @@ export default function userRepository() {
         pairsJson = json
       }).catch((error) => {
 
-        console.log('request failed', error)
+        console.log('get pairs request failed', error)
       })
-
-    return { pairs: pairsJson }
+    
+    return pairsJson
   }
 }

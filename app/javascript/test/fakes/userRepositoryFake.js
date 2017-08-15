@@ -18,12 +18,11 @@ export default function UserRepositoryFake() {
   this.getPairs = async () => {
     if(!isEmpty(users)) {
       let pairChunks = chunk(users, 2)
-      pairChunks.forEach((users, i) => {
+      pairChunks.forEach((users) => {
         const pairOne = users[0].name
         const pairTwo = (users[1] && users[1].name) || null
-        pairs.push({id: i+1, 
-                    pairOne: pairOne,
-                    pairTwo: pairTwo
+        pairs.push({pair_one: pairOne,
+                    pair_two: pairTwo
         })
       })
     }

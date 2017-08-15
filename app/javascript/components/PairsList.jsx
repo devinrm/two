@@ -7,9 +7,9 @@ export default class PairsList extends React.Component {
   
   renderPairs = () => {
     return (
-      this.props.pairs.map(pair => 
-        <li key={pair.id}>
-          {pair.pairOne} | {pair.pairTwo}
+      this.props.pairs.map((pair, index) => 
+        <li key={index}>
+          {pair.pair_one} | {pair.pair_two}
         </li>
       )
     )

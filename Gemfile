@@ -17,6 +17,8 @@ gem 'webpacker'
 
 group :development, :test do
   gem 'capybara', '~> 2.15', '>= 2.15.1'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.6'
   gem 'selenium-webdriver', '~> 3.4', '>= 3.4.3'
   gem 'simplecov', require: false

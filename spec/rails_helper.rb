@@ -9,6 +9,8 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'support/factory_girl'
+require 'database_cleaner'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -47,9 +49,12 @@ end
 Selenium::WebDriver::Chrome.driver_path = Rails.root.join('chromedriver').to_s if File.exist?("chromedriver")
 
 Capybara.javascript_driver = :chrome
-Capybara.default_max_wait_time = 8
+Capybara.default_max_wait_time = 4
 
 RSpec.configure do |config|
+  config.before(:suite) do 
+    DatabaseCleaner.clean_with(:truncation)
+  end
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

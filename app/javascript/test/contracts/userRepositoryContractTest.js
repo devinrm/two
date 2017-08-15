@@ -32,7 +32,7 @@ export default function UserRepositoryContractTest(UserRepositoryClass) {
         let returnedPairs = await userRepository.getPairs()
         expect(returnedPairs).to.deep.eq({
           pairs: [
-            { id: 1, pairOne: 'User One', pairTwo: 'User Two' }
+            { pair_one: 'User One', pair_two: 'User Two' }
           ] 
         })
       })

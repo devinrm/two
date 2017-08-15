@@ -14,10 +14,10 @@ export default class App extends React.Component {
   }
 
   renderPairsList = async () => {
-    let pairs = await this.props.userRepository.getPairs()
+    let pairsJson = await this.props.userRepository.getPairs()
     this.setState({
       renderSignUp: false,
-      pairs: pairs
+      pairs: pairsJson.pairs
     })
   }
 
@@ -26,7 +26,7 @@ export default class App extends React.Component {
     if(renderSignUp) {
       return (
         <div>
-          <SignUp UserRepository={this.props.userRepository} />
+          <SignUp userRepository={this.props.userRepository} />
           <button onClick={this.renderPairsList}>Let's Code!</button>
         </div>
       )
