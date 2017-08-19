@@ -7,9 +7,8 @@ describe 'getting users' do
   end
 
   it 'sends a list of users' do
-    json = JSON.parse(response.body)
     expect(response).to be_success
-    expect(json.length).to eq(2)
+    expect(response.parsed_body.length).to eq(2)
   end
 end
 
@@ -40,7 +39,7 @@ describe 'creating users' do
 
     it 'returns error messages' do
       json = JSON.parse(response.body)
-      expect(json).to eq(['error!'])
+      expect(response.parsed_body).to eq(['error!'])
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end

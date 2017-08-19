@@ -7,8 +7,7 @@ describe 'getting pairs' do
   end
 
   it 'sends a list of pairs' do 
-    json = JSON.parse(response.body)
     expect(response).to be_success
-    expect(json['pairs'].length).to eq(2)
+    expect(response.parsed_body['pairs'].length).to eq(2)
   end
 end

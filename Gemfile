@@ -29,6 +29,8 @@ group :development do
   gem 'binding_of_caller', '~> 0.7.3.pre1'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry-rails', '~> 0.3.6'
+  gem "spring"
+  gem 'spring-commands-rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
