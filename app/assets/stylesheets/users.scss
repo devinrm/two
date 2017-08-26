@@ -121,6 +121,45 @@ form {
   }
 }
 
+table {
+  border: 1px solid $gallery-white;
+  border-bottom: 2px solid $gallery-white;
+  border-collapse: collapse;
+  box-shadow: 0rem 0rem 1.25rem rgba(0,0,0,0.10),
+  0rem 0.625rem 1.25rem rgba(0,0,0,0.05),
+  0rem 1.25rem 1.25rem rgba(0,0,0,0.05),
+  0rem 1.875rem 1.25rem rgba(0,0,0,0.05);
+  font-family: 'Raleway', sans-serif;
+  width: 27.5rem;
+
+  tr {
+    &:hover {
+      background: $white;
+
+      td {
+        color: $black;
+      }
+    }
+  }
+
+  th, td {
+    border: 1px solid $gallery-white;
+    border-collapse: collapse;
+    color: $white;
+    padding: 0.75rem 2.187rem;
+  }
+
+  th {
+    background: $cinnabar;
+    color: $white;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    &.last {
+      border-right: none;
+    }
+  }
+}
+
 button {
   background: $azure-radiance;
   border: 0;
@@ -145,43 +184,4 @@ button {
   color: $azure-radiance;
   box-shadow: 0 0.5em 0.5em -0.4em $white;
   transform: translateY(-0.25em);
-}
-
-table {
-  border: 1px solid $gallery-white;
-  border-bottom: 2px solid $cinnabar;
-  border-collapse: collapse;
-  box-shadow: 0rem 0rem 1.25rem rgba(0,0,0,0.10),
-  0rem 0.625rem 1.25rem rgba(0,0,0,0.05),
-  0rem 1.25rem 1.25rem rgba(0,0,0,0.05),
-  0rem 1.875rem 1.25rem rgba(0,0,0,0.05);
-  font-family: 'Raleway', sans-serif;
-  width: 27.5rem;
-
-  tr {
-    &:hover {
-      background: $gallery-white;
-
-      td {
-        color: $black;
-      }
-    }
-  }
-
-  th, td {
-    border: 1px solid $gallery-white;
-    border-collapse: collapse;
-    color: $white;
-    padding: 0.75rem 2.187rem;
-  }
-
-  th {
-    background: $cinnabar;
-    color: $white;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    &.last {
-      border-right: none;
-    }
-  }
 }
