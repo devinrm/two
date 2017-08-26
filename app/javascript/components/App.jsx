@@ -27,7 +27,7 @@ export default class App extends React.Component {
       return (
         <div>
           <SignUp userRepository={this.props.userRepository} />
-          <button onClick={this.renderPairsList}>Let's Code!</button>
+          <button className='raise' onClick={this.renderPairsList}>Let's Code!</button>
         </div>
       )
     } else {

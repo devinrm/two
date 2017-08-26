@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$azure-radiance: #3e86ff;
 $black: #000;
+$cinnabar: #d42d28;
 $gallery-white: #eee;
 $hot-hot-pink: #ff50d6;
 $razzle-dazzle-rose: #d415a1;
+$red-orange: #f6402d;
+$red-orange-gradient: rgba(246, 64, 45, 0.95);
 $robins-egg-blue: #00cccc;
 $robins-egg-blue-gradient: rgba(0, 166, 167, 0.95);
 $white: #fff;
@@ -24,8 +28,8 @@ body {
 
 html {
   background: linear-gradient(
-    $robins-egg-blue-gradient,
-    $robins-egg-blue-gradient
+  $red-orange-gradient,
+  $red-orange-gradient
   ),
   url("https://s3.amazonaws.com/two-app/dc_map.webp") no-repeat center center fixed;
 }
@@ -93,7 +97,7 @@ form {
   }
 
   button {
-    background: $razzle-dazzle-rose;
+    background: $azure-radiance;
     border: 0;
     color: $white;
     cursor: pointer;
@@ -106,19 +110,46 @@ form {
 
     &:hover,
     &:focus {
-      border-color: adjust-hue($hot-hot-pink, 45deg);
+      border-color: adjust-hue($azure-radiance, 45deg);
     }
   }
 
   .fill:hover,
   .fill:focus {
-    box-shadow: inset 0 -3.25em 0 0 adjust-hue($hot-hot-pink, 45deg);
+    box-shadow: inset 0 -3.25em 0 0 adjust-hue($white, 45deg);
+    color: $azure-radiance;
   }
+}
+
+button {
+  background: $azure-radiance;
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  display: block;
+  font-size: 1.2rem;
+  margin: 0 0 1.25rem;
+  padding: 1.25rem;
+  transition: 0.25s;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    border-color: adjust-hue($azure-radiance, 45deg);
+  }
+}
+
+.raise:hover,
+.raise:focus {
+  background-color: $white;
+  color: $azure-radiance;
+  box-shadow: 0 0.5em 0.5em -0.4em $white;
+  transform: translateY(-0.25em);
 }
 
 table {
   border: 1px solid $gallery-white;
-  border-bottom: 2px solid $robins-egg-blue;
+  border-bottom: 2px solid $cinnabar;
   border-collapse: collapse;
   box-shadow: 0rem 0rem 1.25rem rgba(0,0,0,0.10),
   0rem 0.625rem 1.25rem rgba(0,0,0,0.05),
@@ -145,7 +176,7 @@ table {
   }
 
   th {
-    background: $robins-egg-blue;
+    background: $cinnabar;
     color: $white;
     font-size: 0.75rem;
     text-transform: uppercase;
