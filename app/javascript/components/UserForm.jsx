@@ -19,11 +19,12 @@ export default class UserForm extends React.Component {
     });
   };
 
-  handleAddUser = async event => {
-    event.preventDefault();
-    let { fullName, skillLevel } = this.state;
-    await this.props.addUser({ fullName, skillLevel });
-  };
+  handleAddUser = async (event) => {
+    event.preventDefault()
+    let { fullName, skillLevel } = this.state
+    this.setState({fullName: '', skillLevel: ''})
+    await this.props.addUser({ fullName, skillLevel })
+  }
 
   render() {
     return (
@@ -33,10 +34,10 @@ export default class UserForm extends React.Component {
             id="user-full-name"
             type="text"
             name="fullName"
-            required
+            required 
             placeholder=" "
-            onChange={this.handleInputChange}
-          />
+            value={this.state.fullName}
+            onChange={this.handleInputChange} />
           <label htmlFor="user-full-name">Full Name</label>
         </div>
         <div>
@@ -45,8 +46,8 @@ export default class UserForm extends React.Component {
             name="skillLevel"
             value="junior"
             id="user-skillLevel-junior"
-            onClick={this.handleInputChange}
-          />
+            checked={this.state.skillLevel == "junior"}
+            onClick={this.handleInputChange} />
           <label htmlFor="user-skillLevel-junior">Junior Developer</label>
         </div>
         <div>
@@ -55,8 +56,8 @@ export default class UserForm extends React.Component {
             name="skillLevel"
             value="mid_level"
             id="user-skillLevel-mid-level"
-            onClick={this.handleInputChange}
-          />
+            checked={this.state.skillLevel == "mid_level"}
+            onClick={this.handleInputChange} />
           <label htmlFor="user-skillLevel-mid-level">Mid-level Developer</label>
         </div>
         <div>
@@ -65,8 +66,8 @@ export default class UserForm extends React.Component {
             name="skillLevel"
             value="senior"
             id="user-skillLevel-senior"
-            onClick={this.handleInputChange}
-          />
+            checked={this.state.skillLevel == "senior"}
+            onClick={this.handleInputChange} />
           <label htmlFor="user-skillLevel-senior">Senior Developer</label>
         </div>
         <button className="fill" onClick={this.handleAddUser}>

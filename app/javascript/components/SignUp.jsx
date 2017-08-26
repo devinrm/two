@@ -20,18 +20,28 @@ export default class SignUp extends React.Component {
     this.setState({ users: users.users });
   };
 
+  handleDeleteUser = async (userID) => {
+    await this.props.userRepository.delete(userID)
+    this.getUsers()
+  }
+
   renderUserRows = () => {
-    return this.state.users.map(user =>
-      <tr key={user.id}>
-        <td>
-          {user.name}
-        </td>
-        <td>
-          {capitalize(replace(user.level, '_', ' '))} Developer
-        </td>
-      </tr>
-    );
-  };
+    return (
+      this.state.users.map(user =>
+        <tr key={user.id}>
+          <td>{user.name}</td>
+          <td>{capitalize(replace(user.level, "_", " "))} Developer</td>
+          <td>
+            <i className="fa fa-trash"
+              aria-hidden="true"
+              aria-label="delete user"
+              id={`delete-user-${user.id}`}
+              onClick={() => { this.handleDeleteUser(user.id) }}>
+            </i>
+          </td>
+        </tr>)
+    )
+  }
 
   addUser = async userData => {
     await this.props.userRepository.add(userData);
@@ -47,6 +57,7 @@ export default class SignUp extends React.Component {
             <tr>
               <th>Name</th>
               <th>Level</th>
+              <th />
             </tr>
           </thead>
           <tbody>

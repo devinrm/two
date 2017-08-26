@@ -12,6 +12,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if User.delete(params['id']) == 1
+      render json: {}, status: :ok
+    else
+      render json: ['Cannot delete user that does not exist'], status: :not_found
+    end
+  end
+
   private
 
   def user_params

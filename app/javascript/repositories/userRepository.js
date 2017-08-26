@@ -15,6 +15,16 @@ export default function UserRepository() {
     }).then(noop)
   }
 
+  this.delete = async (userID) => {
+    await fetch('/users/' + userID, {
+      method: 'DELETE',
+    })
+      .then(noop)
+      .catch((error) => {
+        console.log('delete user request failed', error)
+      })
+  }
+
   this.getAll = async () => {
     let usersJson = []
 
@@ -24,7 +34,6 @@ export default function UserRepository() {
       }).then((json) => {
         usersJson = json
       }).catch((error) => {
-
         console.log('get users request failed', error)
       })
 
@@ -40,7 +49,6 @@ export default function UserRepository() {
       }).then((json) => {
         pairsJson = json
       }).catch((error) => {
-
         console.log('get pairs request failed', error)
       })
     

@@ -32,15 +32,38 @@ describe 'creating users' do
 
   describe 'invalid user params' do 
     before do 
-      allow(user).to receive(:save).and_return false 
+      allow(user).to receive(:save).and_return false
       allow(user).to receive_message_chain(:errors, :full_messages).and_return ['error!']
       post '/users', params: { user: { 'a': 'b' } }
     end
 
     it 'returns error messages' do
-      json = JSON.parse(response.body)
       expect(response.parsed_body).to eq(['error!'])
       expect(response).to have_http_status(:unprocessable_entity)
+    end
+  end
+end
+
+describe 'deleting users' do 
+  before do 
+      allow(User).to receive(:delete).and_return deleted_rows
+      delete "/users/100"
+    end
+
+  describe 'user exists' do 
+    let(:deleted_rows) { 1 }
+
+    it 'deletes the user' do 
+      expect(response).to be_ok
+    end
+  end
+
+  describe 'user does not exist' do 
+    let(:deleted_rows) { 0 }
+
+    it 'returns an error message' do
+      expect(response.parsed_body).to eq(['Cannot delete user that does not exist'])
+      expect(response).to have_http_status :not_found
     end
   end
 end

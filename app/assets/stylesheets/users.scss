@@ -162,6 +162,10 @@ table {
       td {
         color: $sunset-orange;
       }
+
+      td:last-of-type {
+        border: none;
+      }
     }
   }
 

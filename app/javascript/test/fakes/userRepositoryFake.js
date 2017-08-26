@@ -1,8 +1,9 @@
-import UserRepositoryContractTest from '../contracts/userRepositoryContractTest';
-import { expect } from 'chai';
-import isEmpty from 'lodash/isEmpty';
-import chunk from 'lodash/chunk';
-
+import UserRepositoryContractTest from '../contracts/userRepositoryContractTest'
+import { expect } from 'chai'
+import isEmpty from 'lodash/isEmpty'
+import chunk from 'lodash/chunk'
+import remove from 'lodash/remove'
+ 
 export default function UserRepositoryFake() {
   let users = [];
   let pairs = [];
@@ -13,7 +14,11 @@ export default function UserRepositoryFake() {
     id += 1;
   };
 
-  this.getAll = async () => ({ users: users });
+  this.delete = async (userID) => {
+    remove(users, (user) => user.id == userID)
+  } 
+
+  this.getAll = async () => ({ users })
 
   this.getPairs = async () => {
     if (!isEmpty(users)) {

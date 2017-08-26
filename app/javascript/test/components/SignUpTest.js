@@ -6,12 +6,13 @@ import SignUp from '../../components/SignUp';
 import UserRepositoryFake from '../fakes/userRepositoryFake';
 
 describe('User Sign Up', () => {
-  let signUp;
+
+  let signUp,
+      userRepositoryFake = new UserRepositoryFake()
 
   beforeEach(() => {
-    let userRepositoryFake = new UserRepositoryFake();
-    signUp = mount(<SignUp userRepository={userRepositoryFake} />);
-  });
+    signUp = mount(<SignUp userRepository={userRepositoryFake} />)
+  })
 
   step('fill out new user form', async () => {
     fillIn('Full Name', { with: 'Test Name' });
@@ -22,6 +23,17 @@ describe('User Sign Up', () => {
     expect(signUp.find('table.users')).to.contain.text('Test Name');
     expect(signUp.find('table.users')).to.contain.text('Senior Developer');
   });
+
+  step('delete created user', async () => {
+    fillIn('Full Name', { with: 'Delete Me' })
+    clickRadioButtonByLabel('Senior Developer')
+    await clickButton(signUp, 'Sign Up')
+
+    const deleteUserLink = signUp.find('td i').at(1)
+    await deleteUserLink.simulate('click')
+
+    expect(signUp.find('table.users')).to.not.contain.text('Delete Me')
+  })
 
   const fillIn = (labelName, args) => {
     const input = findInputByLabel(labelName);
