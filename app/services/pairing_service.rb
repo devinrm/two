@@ -1,4 +1,4 @@
-class PairingService 
+class PairingService
   attr_accessor :pairs
 
   def initialize
@@ -13,7 +13,7 @@ class PairingService
     generate_pairs(juniors, mid_levels, seniors)
 
     pairs
-  end  
+  end
 
   private
 

@@ -1,25 +1,23 @@
-import React from 'react'
+import React from 'react';
 
 export default class PairsList extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   renderPairs = () => {
-    return (
-      this.props.pairs.map((pair, index) =>
-        <li key={index}>
-          {pair.pair_one} & {pair.pair_two}
-        </li>
-      )
-    )
-  }
+    return this.props.pairs.map((pair, index) =>
+      <li key={index}>
+        {pair.pair_one} & {pair.pair_two}
+      </li>
+    );
+  };
 
   render() {
-    return(
+    return (
       <ul className="pairs">
         {this.renderPairs()}
       </ul>
-    )
+    );
   }
 }
