@@ -9,7 +9,7 @@ $gallery-white: #eee;
 $hot-hot-pink: #ff50d6;
 $razzle-dazzle-rose: #d415a1;
 $red-orange: #f6402d;
-$red-orange-gradient: rgba(246, 64, 45, 0.95);
+$red-orange-gradient: rgba(248, 66, 47, 0.90);
 $robins-egg-blue: #00cccc;
 $robins-egg-blue-gradient: rgba(0, 166, 167, 0.95);
 $white: #fff;
@@ -31,7 +31,7 @@ html {
   $red-orange-gradient,
   $red-orange-gradient
   ),
-  url("https://s3.amazonaws.com/two-app/dc_map.webp") no-repeat center center fixed;
+  url("https://s3.amazonaws.com/two-app/dc_map.png") no-repeat center center fixed;
 }
 
 .logo a {
