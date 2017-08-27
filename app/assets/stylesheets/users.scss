@@ -5,13 +5,19 @@
 $azure-radiance: #3e86ff;
 $black: #000;
 $cinnabar: #d42d28;
+$dodger-blue: #1193f5;
+$dodger-blue-gradient: rgba(17, 147, 245, 0.90);
+$cornflower-blue: #0f8ae7;
+$cornflower-blue-gradient: rgba(15, 138, 231, 0.90);
 $gallery-white: #eee;
 $hot-hot-pink: #ff50d6;
+$mariner: #0c73d4;
 $razzle-dazzle-rose: #d415a1;
 $red-orange: #f6402d;
 $red-orange-gradient: rgba(248, 66, 47, 0.90);
 $robins-egg-blue: #00cccc;
 $robins-egg-blue-gradient: rgba(0, 166, 167, 0.95);
+$sunset-orange: #ff4f4c;
 $white: #fff;
 
 * {
@@ -28,8 +34,8 @@ body {
 
 html {
   background: linear-gradient(
-  $red-orange-gradient,
-  $red-orange-gradient
+  $cornflower-blue-gradient,
+  $cornflower-blue-gradient
   ),
   url("https://s3.amazonaws.com/two-app/dc_map.png") no-repeat center center fixed;
 }
@@ -97,7 +103,7 @@ form {
   }
 
   button {
-    background: $azure-radiance;
+    background: $sunset-orange;
     border: 0;
     color: $white;
     cursor: pointer;
@@ -110,14 +116,14 @@ form {
 
     &:hover,
     &:focus {
-      border-color: adjust-hue($azure-radiance, 45deg);
+      border-color: adjust-hue($sunset-orange, 45deg);
     }
   }
 
   .fill:hover,
   .fill:focus {
     box-shadow: inset 0 -3.25em 0 0 adjust-hue($white, 45deg);
-    color: $azure-radiance;
+    color: $sunset-orange;
   }
 }
 
@@ -137,7 +143,7 @@ table {
       background: $white;
 
       td {
-        color: $azure-radiance;
+        color: $sunset-orange;
       }
     }
   }
@@ -150,7 +156,7 @@ table {
   }
 
   th {
-    background: $cinnabar;
+    background: $mariner;
     color: $white;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -161,7 +167,7 @@ table {
 }
 
 button {
-  background: $azure-radiance;
+  background: $sunset-orange;
   border: 0;
   color: $white;
   cursor: pointer;
@@ -174,14 +180,14 @@ button {
 
   &:hover,
   &:focus {
-    border-color: adjust-hue($azure-radiance, 45deg);
+    border-color: adjust-hue($sunset-orange, 45deg);
   }
 }
 
 .raise:hover,
 .raise:focus {
   background-color: $white;
-  color: $azure-radiance;
+  color: $sunset-orange;
   box-shadow: 0 0.5em 0.5em -0.4em $white;
   transform: translateY(-0.5em);
 }
