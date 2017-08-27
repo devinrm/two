@@ -137,7 +137,7 @@ table {
       background: $white;
 
       td {
-        color: $black;
+        color: $azure-radiance;
       }
     }
   }
@@ -167,7 +167,7 @@ button {
   cursor: pointer;
   display: block;
   font-size: 1.2rem;
-  margin: 0 0 1.25rem;
+  margin: 0.5rem 0 1.25rem;
   padding: 1.25rem;
   transition: 0.25s;
   width: 100%;
@@ -183,5 +183,5 @@ button {
   background-color: $white;
   color: $azure-radiance;
   box-shadow: 0 0.5em 0.5em -0.4em $white;
-  transform: translateY(-0.25em);
+  transform: translateY(-0.5em);
 }
