@@ -44,10 +44,27 @@ html {
   color: $white;
   font-size: 2.5rem;
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    color: $cornflower-blue;
+  }
 }
 
 sub {
   font-size: 0.75rem;
+}
+
+.dcrug-link a {
+  color: $sunset-orange;
+  font-size: 0.75rem;
+
+  &:hover,
+  &:focus {
+    background-color: $sunset-orange;
+    color: $white;
+  }
 }
 
 form {
