@@ -27,10 +27,10 @@ class PairingService
   def pair(juniors, mid_levels, seniors)
     pair_one = juniors.pop || mid_levels.pop || seniors.pop
     pair_two = if pair_one.junior?
-                    mid_levels.pop || seniors.pop || juniors.pop
-                  else
-                    seniors.pop || mid_levels.pop
-                  end
+                 mid_levels.pop || seniors.pop || juniors.pop
+               else
+                 seniors.pop || mid_levels.pop
+               end
     Pair.new(pair_one.name, pair_two.try(:name))
   end
 end
