@@ -213,6 +213,10 @@ button {
   transform: translateY(-0.5em);
 }
 
+.fa {
+  cursor: pointer;
+}
+
 .pairs li {
   border: 1px solid $white;
   list-style-type: none;
