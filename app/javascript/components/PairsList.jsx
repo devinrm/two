@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class PairsList extends React.Component {
   constructor(props) {
@@ -20,4 +21,8 @@ export default class PairsList extends React.Component {
       </ul>
     );
   }
+}
+
+PairsList.propTypes = {
+  pairs: PropTypes.arrayOf(PropTypes.object)
 }

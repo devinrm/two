@@ -1,10 +1,12 @@
-import React from 'react';
-import { capitalize, replace } from 'lodash';
-import UserForm from './UserForm';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { capitalize, replace } from 'lodash'
+import UserForm from './UserForm'
+import UserRepository from '../repositories/userRepository'
 
 export default class SignUp extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       users: []
@@ -12,13 +14,13 @@ export default class SignUp extends React.Component {
   }
 
   componentDidMount() {
-    this.getUsers();
+    this.getUsers()
   }
 
   getUsers = async () => {
-    let users = await this.props.userRepository.getAll();
-    this.setState({ users: users.users });
-  };
+    let users = await this.props.userRepository.getAll()
+    this.setState({ users: users.users })
+  }
 
   handleDeleteUser = async (userID) => {
     await this.props.userRepository.delete(userID)
@@ -44,8 +46,8 @@ export default class SignUp extends React.Component {
   }
 
   addUser = async userData => {
-    await this.props.userRepository.add(userData);
-    this.getUsers();
+    await this.props.userRepository.add(userData)
+    this.getUsers()
   };
 
   render() {
@@ -67,4 +69,8 @@ export default class SignUp extends React.Component {
       </section>
     );
   }
+}
+
+SignUp.propTypes = {
+  userRepository: PropTypes.instanceOf(UserRepository)
 }

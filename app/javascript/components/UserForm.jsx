@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class UserForm extends React.Component {
   constructor(props) {
@@ -7,17 +8,17 @@ export default class UserForm extends React.Component {
     this.state = {
       fullName: '',
       skillLevel: ''
-    };
+    }
   }
 
   handleInputChange = event => {
-    const value = event.target.value;
-    const name = event.target.name;
+    const value = event.target.value
+    const name = event.target.name
 
     this.setState({
       [name]: value
-    });
-  };
+    })
+  }
 
   handleAddUser = async (event) => {
     event.preventDefault()
@@ -76,4 +77,8 @@ export default class UserForm extends React.Component {
       </form>
     );
   }
+}
+
+UserForm.propTypes = {
+  addUser: PropTypes.func
 }

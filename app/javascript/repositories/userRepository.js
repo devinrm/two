@@ -1,8 +1,8 @@
 import 'whatwg-fetch'
 import {noop} from 'lodash'
 
-export default function UserRepository() {
-  this.add = async (userData) => {
+export default class UserRepository {
+  add = async (userData) => {
     await fetch('/users', {
       method: 'POST',
       headers: {
@@ -15,7 +15,7 @@ export default function UserRepository() {
     }).then(noop)
   }
 
-  this.delete = async (userID) => {
+  delete = async (userID) => {
     await fetch('/users/' + userID, {
       method: 'DELETE',
     })
@@ -25,7 +25,7 @@ export default function UserRepository() {
       })
   }
 
-  this.getAll = async () => {
+  getAll = async () => {
     let usersJson = []
 
     await fetch('/users')
@@ -40,7 +40,7 @@ export default function UserRepository() {
     return {users: usersJson}
   }
 
-  this.getPairs = async () => {
+  getPairs = async () => {
     let pairsJson = []
 
     await fetch('/pairs')

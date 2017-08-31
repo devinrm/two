@@ -1,24 +1,25 @@
-import React from 'react';
-import SignUp from './SignUp';
-import PairsList from './PairsList';
+import React from 'react'
+import PropTypes from 'prop-types'
+import SignUp from './SignUp'
+import PairsList from './PairsList'
 
 export default class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       pairs: [],
       renderSignUp: true
-    };
+    }
   }
 
   renderPairsList = async () => {
-    let pairsJson = await this.props.userRepository.getPairs();
+    let pairsJson = await this.props.userRepository.getPairs()
     this.setState({
       renderSignUp: false,
       pairs: pairsJson.pairs
-    });
-  };
+    })
+  }
 
   render() {
     const renderSignUp = this.state.renderSignUp;
@@ -30,9 +31,13 @@ export default class App extends React.Component {
             Let's Code!
           </button>
         </div>
-      );
+      )
     } else {
-      return <PairsList pairs={this.state.pairs} />;
+      return <PairsList pairs={this.state.pairs} />
     }
   }
+}
+
+App.propTypes = {
+  userRepository: PropTypes.object
 }
