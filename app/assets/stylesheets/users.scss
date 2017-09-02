@@ -2,22 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$azure-radiance: #3e86ff;
 $black: #000;
-$cinnabar: #d42d28;
-$dodger-blue: #1193f5;
-$dodger-blue-gradient: rgba(17, 147, 245, 0.90);
-$cornflower-blue: #0f8ae7;
-$cornflower-blue-gradient: rgba(15, 138, 231, 0.90);
+$cornflower-blue: #1976d2;
+$cornflower-blue-gradient: rgba(12, 115, 211, 0.90);
 $gallery-white: #eee;
-$hot-hot-pink: #ff50d6;
-$mariner: #0c73d4;
-$razzle-dazzle-rose: #d415a1;
-$red-orange: #f6402d;
-$red-orange-gradient: rgba(248, 66, 47, 0.90);
-$robins-egg-blue: #00cccc;
-$robins-egg-blue-gradient: rgba(0, 166, 167, 0.95);
-$sunset-orange: #ff4f4c;
+$mariner: #004ba0;
+$storm-dust: #676565;
+$sunset-orange: #d32f2f;
 $white: #fff;
 
 * {
@@ -37,7 +28,7 @@ html {
   $cornflower-blue-gradient,
   $cornflower-blue-gradient
   ),
-  url("https://s3.amazonaws.com/two-app/dc_map.png") no-repeat center center fixed;
+  url("https://s3.amazonaws.com/two-app/dc_map.svg") no-repeat center center fixed;
 }
 
 .logo a {
@@ -74,11 +65,10 @@ form {
     position: relative;
 
     > label {
-      color: $black;
+      color: $storm-dust;
       font-weight: 900;
       left: 1.25rem;
       padding-left: 1.875rem;
-      opacity: 0.3;
       position: absolute;
       top: 1.25rem;
     }
@@ -125,7 +115,7 @@ form {
     color: $white;
     cursor: pointer;
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 0 0 1.25rem;
     padding: 1.25rem;
     transition: 0.25s;
@@ -193,8 +183,8 @@ button {
   color: $white;
   cursor: pointer;
   display: block;
-  font-size: 1.2rem;
-  margin: 0.5rem 0 1.25rem;
+  font-size: 1.5rem;
+  margin: 0.3rem 0 1.25rem;
   padding: 1.25rem;
   transition: 0.25s;
   width: 100%;
@@ -209,8 +199,11 @@ button {
 .raise:focus {
   background-color: $white;
   color: $sunset-orange;
-  box-shadow: 0 0.5em 0.5em -0.4em $white;
-  transform: translateY(-0.5em);
+  transform: translateY(-0.3em);
+}
+
+.far:hover .fa-trash:before {
+  content: '\f219';
 }
 
 .fa {
