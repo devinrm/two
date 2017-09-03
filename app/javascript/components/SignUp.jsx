@@ -33,7 +33,7 @@ export default class SignUp extends React.Component {
         <tr key={user.id}>
           <td>{user.name}</td>
           <td>{capitalize(replace(user.level, "_", " "))} Developer</td>
-          <td className="far">
+          <td className="fa-icon">
             <i className="fa fa-trash"
               aria-hidden="true"
               aria-label="delete user"

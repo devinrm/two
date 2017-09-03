@@ -28,7 +28,7 @@ html {
   $cornflower-blue-gradient,
   $cornflower-blue-gradient
   ),
-  url("https://s3.amazonaws.com/two-app/dc_map.svg") no-repeat center center fixed;
+  url("https://s3.amazonaws.com/two-app/dc_map.svg") no-repeat center top fixed;
 }
 
 .logo a {
@@ -202,7 +202,7 @@ button {
   transform: translateY(-0.3em);
 }
 
-.far:hover .fa-trash:before {
+.fa-icon:hover .fa-trash:before {
   content: '\f219';
 }
 
