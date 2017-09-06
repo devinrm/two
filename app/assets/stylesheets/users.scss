@@ -31,6 +31,13 @@ html {
   url("https://s3.amazonaws.com/two-app/dc_map.svg") no-repeat center top fixed;
 }
 
+a {
+  &:hover, &:focus {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
 .logo a {
   color: $white;
   font-size: 2.5rem;

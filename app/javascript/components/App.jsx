@@ -4,7 +4,7 @@ import SignUp from './SignUp'
 import PairsList from './PairsList'
 
 export default class App extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -21,19 +21,34 @@ export default class App extends React.Component {
     })
   }
 
-  render() {
-    const renderSignUp = this.state.renderSignUp;
+  handleBackClick = () => {
+    this.setState({
+      renderSignUp: true
+    })
+  }
+
+  render () {
+    const renderSignUp = this.state.renderSignUp
     if (renderSignUp) {
       return (
-        <div>
+        <section>
           <SignUp userRepository={this.props.userRepository} />
-          <button className="raise" onClick={this.renderPairsList}>
+          <button className='raise' onClick={this.renderPairsList}>
             Let's Code!
           </button>
-        </div>
+        </section>
       )
     } else {
-      return <PairsList pairs={this.state.pairs} />
+      return (
+        <section>
+          <a onClick={this.handleBackClick}>
+            <i className='fa fa-arrow-circle-o-left fa-fw'
+              aria-hidden='true' />
+              Back
+          </a>
+          <PairsList pairs={this.state.pairs} />
+        </section>
+      )
     }
   }
 }

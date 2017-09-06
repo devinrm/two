@@ -1,8 +1,5 @@
 // Note: You must restart bin/webpack-dev-server for changes to take effect
 
-/* eslint global-require: 0 */
-/* eslint import/no-dynamic-require: 0 */
-
 const webpack = require('webpack')
 const { basename, dirname, join, relative, resolve } = require('path')
 const { sync } = require('glob')

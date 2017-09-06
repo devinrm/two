@@ -2,24 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export default class PairsList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderPairs = () => {
     return this.props.pairs.map((pair, index) =>
       <li key={index}>
         {pair.pair_one} & {pair.pair_two}
       </li>
-    );
-  };
+    )
+  }
 
-  render() {
+  render () {
     return (
-      <ul className="pairs">
+      <ul className='pairs'>
         {this.renderPairs()}
       </ul>
-    );
+    )
   }
 }
 

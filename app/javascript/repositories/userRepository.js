@@ -10,14 +10,14 @@ export default class UserRepository {
       },
       body: JSON.stringify({
         name: userData.fullName,
-        level: userData.skillLevel,
+        level: userData.skillLevel
       })
     }).then(noop)
   }
 
   delete = async (userID) => {
     await fetch('/users/' + userID, {
-      method: 'DELETE',
+      method: 'DELETE'
     })
       .then(noop)
       .catch((error) => {
@@ -51,7 +51,7 @@ export default class UserRepository {
       }).catch((error) => {
         console.log('get pairs request failed', error)
       })
-    
+
     return pairsJson
   }
 }
