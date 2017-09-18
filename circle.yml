@@ -1,9 +1,9 @@
 ---
 machine:
   ruby:
-    version: 2.4.1
+    version: 2.4.2
   node:
-    version: 8.1.2
+    version: 8.5.0
   environment:
     SPEC_ALL: true
 
